@@ -1,0 +1,5 @@
+/workspaces/AutoTestX/src/main/java/base/BaseTest.java
+/workspaces/AutoTestX/src/main/java/pages/LoginPage.java
+/workspaces/AutoTestX/src/main/java/utils/BrowserFactory.java
+/workspaces/AutoTestX/src/main/java/utils/ConfigReader.java
+/workspaces/AutoTestX/src/main/java/utils/ExtentManager.java
