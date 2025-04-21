@@ -1,3 +1,5 @@
+![Build](https://github.com/Sankarraj-Subramani/AutoTestX/actions/workflows/run-tests.yml/badge.svg)
+
 # AutoTestX – A Scalable Selenium + TestNG Framework
 
 ## Overview
