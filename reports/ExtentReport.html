@@ -1,40 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AutoTestX – ExtentReport</title>
-  <style>
-    body { font-family: Arial; background: #f4f4f4; padding: 20px; }
-    .container { max-width: 800px; margin: auto; background: #fff; padding: 30px; border-radius: 8px; }
-    h1 { color: #3e8e41; }
-    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-    th, td { padding: 10px; border: 1px solid #ccc; text-align: left; }
-    th { background-color: #eee; }
-  </style>
+    <meta charset="UTF-8">
+    <title>Extent Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+        }
+        .report-container {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 960px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .meta-info {
+            margin-bottom: 20px;
+        }
+        .meta-info p {
+            margin: 5px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        table th, table td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: left;
+        }
+        table th {
+            background-color: #f2f2f2;
+        }
+        .pass {
+            color: green;
+            font-weight: bold;
+        }
+        .fail {
+            color: red;
+            font-weight: bold;
+        }
+        .skip {
+            color: orange;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>AutoTestX – Sample Test Execution Report</h1>
-    <p>This is a sample ExtentReport placeholder file for GitHub Pages.</p>
+    <div class="report-container">
+        <h1>Extent Report</h1>
+        <div class="meta-info">
+            <p><strong>Generated on:</strong> <span id="timestamp"></span></p>
+            <p><strong>Executed By:</strong> Sankarraj Subramani</p>
+            <p><strong>Environment:</strong> QA</p>
+            <p><strong>Browser:</strong> Chrome</p>
+        </div>
+        <h2>Test Results</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Test Case</th>
+                    <th>Status</th>
+                    <th>Details</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>LoginTest</td>
+                    <td class="pass">PASS</td>
+                    <td>-</td>
+                    <td id="time1"></td>
+                </tr>
+                <tr>
+                    <td>SearchTest</td>
+                    <td class="fail">FAIL</td>
+                    <td>Element not found</td>
+                    <td id="time2"></td>
+                </tr>
+                <tr>
+                    <td>ProfileUpdateTest</td>
+                    <td class="skip">SKIPPED</td>
+                    <td>Dependency failed</td>
+                    <td id="time3"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-    <table>
-      <tr>
-        <th>Test Case</th>
-        <th>Status</th>
-        <th>Timestamp</th>
-      </tr>
-      <tr>
-        <td>LoginTest</td>
-        <td style="color: green;">Passed</td>
-        <td>2025-04-20 10:00 AM</td>
-      </tr>
-      <tr>
-        <td>CheckoutTest</td>
-        <td style="color: red;">Failed</td>
-        <td>2025-04-20 10:01 AM</td>
-      </tr>
-    </table>
-  </div>
+    <script>
+        const now = new Date();
+        const formatted = now.toLocaleString();
+        document.getElementById("timestamp").textContent = formatted;
+        document.getElementById("time1").textContent = formatted;
+        document.getElementById("time2").textContent = formatted;
+        document.getElementById("time3").textContent = formatted;
+    </script>
 </body>
 </html>

@@ -1,59 +1,66 @@
 package base;
 
-import java.lang.reflect.Method;
-
+import com.aventstack.extentreports.*;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.*;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class BaseTest {
+    public static WebDriver driver;
+    public static ExtentReports extent;
+    public static ExtentTest test;
 
-    protected WebDriver driver;
-    protected static ExtentReports extent;
-    protected static ExtentTest test;
+    @BeforeSuite
+    public void setUpReport() {
+        String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date()); // dynamic timestamp
+        String reportPath = System.getProperty("user.dir") + "/reports/ExtentReport_" + timestamp + ".html";
+
+        ExtentSparkReporter sparkReporter = new ExtentSparkReporter(reportPath);
+        sparkReporter.config().setReportName("AutoTestX Execution Report - " + timestamp);
+        sparkReporter.config().setDocumentTitle("Test Execution Results");
+
+        extent = new ExtentReports();
+        extent.attachReporter(sparkReporter);
+
+        // Set dynamic system info
+        extent.setSystemInfo("Environment", "QA");
+        extent.setSystemInfo("Tester", "Sankarraj Subramani");
+        extent.setSystemInfo("Generated On", new SimpleDateFormat("MMM dd, yyyy HH:mm:ss").format(new Date()));
+    }
 
     @BeforeMethod
-    public void setUp(Method method) {
-        // Initialize WebDriver
+    public void launchApp() {
+        // Initialize WebDriver (you can customize based on browser params)
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-
-        // Initialize ExtentReports if not already done
-        if (extent == null) {
-            ExtentSparkReporter spark = new ExtentSparkReporter("reports/ExtentReport.html");
-            extent = new ExtentReports();
-            extent.attachReporter(spark);
-        }
-
-        // Start logging the current test method
-        test = extent.createTest(method.getName());
-        test.log(Status.INFO, "Starting test: " + method.getName());
+        driver.get("https://example.com"); // replace with your actual URL
     }
 
     @AfterMethod
     public void tearDown(ITestResult result) {
-        // Log result in report
+        // Create log entry per test
         if (result.getStatus() == ITestResult.FAILURE) {
-            test.log(Status.FAIL, "Test Failed: " + result.getThrowable());
+            test.fail("Test Failed: " + result.getName());
+            test.fail(result.getThrowable());
         } else if (result.getStatus() == ITestResult.SUCCESS) {
-            test.log(Status.PASS, "Test Passed");
+            test.pass("Test Passed: " + result.getName());
         } else if (result.getStatus() == ITestResult.SKIP) {
-            test.log(Status.SKIP, "Test Skipped: " + result.getThrowable());
+            test.skip("Test Skipped: " + result.getName());
         }
 
-        // Quit driver
         if (driver != null) {
             driver.quit();
         }
+    }
 
-        // Flush report
-        extent.flush();
+    @AfterSuite
+    public void tearDownReport() {
+        extent.flush(); // Generates the final HTML report
     }
 }
