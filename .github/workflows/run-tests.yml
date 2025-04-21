@@ -36,7 +36,7 @@ jobs:
 
     - name: Copy ExtentReport.html to root as index.html
       run: cp reports/ExtentReport.html index.html
-
+    
     - name: Upload Extent Report as Artifact
       uses: actions/upload-artifact@v3
       with:
