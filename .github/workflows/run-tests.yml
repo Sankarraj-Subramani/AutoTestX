@@ -38,7 +38,7 @@ jobs:
       run: cp reports/ExtentReport.html index.html
     
     - name: Upload Extent Report as Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v2
       with:
         name: ExtentReport
         path: reports/ExtentReport.html
