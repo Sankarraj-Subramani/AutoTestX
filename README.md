@@ -73,9 +73,10 @@ AutoTestX can be seamlessly plugged into:
 
 ---
 
-## 📊 Sample Output
+##  Sample Output
 
-![Extent Report Screenshot](https://sankarraj-subramani.github.io/AutoTestX/reports/ExtentReport.html)
+ [Click to view live ExtentReport](https://sankarraj-subramani.github.io/AutoTestX/reports/ExtentReport.html)
+
 
 ---
 
