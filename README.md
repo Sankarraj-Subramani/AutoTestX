@@ -1,6 +1,6 @@
 ![Build](https://github.com/Sankarraj-Subramani/AutoTestX/actions/workflows/run-tests.yml/badge.svg)
 
-# 🚀 AutoTestX – A Scalable Selenium + TestNG Framework
+# AutoTestX – A Scalable Selenium + TestNG Framework
 
 AutoTestX is a **plug-and-play, enterprise-grade test automation framework** built with **Java, Selenium, and TestNG**. It enables scalable, maintainable, and high-speed UI testing for web applications across regulated and mission-critical domains.
 
@@ -8,20 +8,20 @@ AutoTestX is a **plug-and-play, enterprise-grade test automation framework** bui
 
 ---
 
-## 🧠 Why AutoTestX Matters
+## Why AutoTestX Matters
 
 In today's fast-paced digital ecosystem, software failures can cause major disruptions — especially in **aviation, banking, and healthcare**. AutoTestX helps mitigate these risks through:
 
-- ⚙️ **Robust and reusable automation components**
-- 🧩 **Early bug detection and faster test cycles**
-- 🔁 **Seamless integration with CI/CD pipelines**
-- 📊 **Real-time test reporting for compliance and audit readiness**
+- **Robust and reusable automation components**
+- **Early bug detection and faster test cycles**
+- **Seamless integration with CI/CD pipelines**
+- **Real-time test reporting for compliance and audit readiness**
 
 This aligns with national priorities in **software safety**, **digital infrastructure resilience**, and **AI-assisted QA automation** — as highlighted in OSTP and NIST AI standards.
 
 ---
 
-## 🔧 Features
+## Features
 
 | Feature                         | Description |
 |---------------------------------|-------------|
@@ -34,7 +34,7 @@ This aligns with national priorities in **software safety**, **digital infrastru
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 AutoTestX/
@@ -49,7 +49,7 @@ AutoTestX/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 1. **Clone the repository**
    ```bash
@@ -62,31 +62,31 @@ Reports will be generated in the `reports/` folder using ExtentReports.
 
 ---
 
-## 📦 CI/CD Integration
+## CI/CD Integration
 
 AutoTestX can be seamlessly plugged into:
 - [✔️ GitHub Actions CI](.github/workflows)
 - [✔️ Jenkins Pipelines]
 - [✔️ GitHub Pages for Report Hosting]
 
-✅ ExtentReports can be archived post-execution for team visibility or regulatory audits.
+- ExtentReports can be archived post-execution for team visibility or regulatory audits.
 
 ---
 
 ## 📊 Sample Output
 
-![Extent Report Screenshot](https://github.com/Sankarraj-Subramani/AutoTestX/blob/main/reports/sample-report.png)
+![Extent Report Screenshot](https://sankarraj-subramani.github.io/AutoTestX/reports/ExtentReport.html)
 
 ---
 
-## 🧬 National Relevance (EB2-NIW Alignment)
+## National Relevance (EB2-NIW Alignment)
 
 AutoTestX addresses the **software reliability gap** in industries where **QA accuracy and test coverage** are mission-critical — such as:
 
-- 🛫 **Aviation systems**
-- 🏥 **Healthcare platforms**
-- 🏛️ **Government portals**
-- 💸 **Banking and housing finance**
+-  **Aviation systems**
+-  **Healthcare platforms**
+-  **Government portals**
+-  **Banking and housing finance**
 
 This open-source initiative enables development teams to adopt high-quality, regulation-ready automation without proprietary costs — contributing to **national technological competitiveness**, **digital infrastructure resilience**, and **quality assurance best practices**.
 
@@ -108,6 +108,6 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-## 📌 Citation and Reference Use
+##  Citation and Reference Use
 
 This repository is cited as supporting evidence in a U.S. **EB2-NIW (National Interest Waiver)** petition under “Substantial Merit in Technology” and “Software Quality Infrastructure.”
